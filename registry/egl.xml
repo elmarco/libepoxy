@@ -876,6 +876,14 @@
             <param><ptype>EGLint</ptype> *<name>stride</name></param>
         </command>
         <command>
+            <proto><ptype>EGLBoolean</ptype> <name>eglExportDMABUFImageMESA</name></proto>
+            <param><ptype>EGLDisplay</ptype> <name>dpy</name></param>
+            <param><ptype>EGLImageKHR</ptype> <name>image</name></param>
+            <param><ptype>EGLNativeFileDescriptorKHR</ptype> *<name>fd</name></param>
+            <param><ptype>EGLint</ptype> *<name>stride</name></param>
+        </command>
+
+        <command>
             <proto><ptype>EGLBoolean</ptype> <name>eglFenceNV</name></proto>
             <param><ptype>EGLSyncNV</ptype> <name>sync</name></param>
         </command>
@@ -1862,6 +1870,11 @@
                 <enum name="EGL_DRM_BUFFER_USE_SHARE_MESA"/>
                 <command name="eglCreateDRMImageMESA"/>
                 <command name="eglExportDRMImageMESA"/>
+            </require>
+        </extension>
+        <extension name="EGL_MESA_image_dma_buf_export" supported="egl">
+            <require>
+                <command name="eglExportDMABUFImageMESA"/>
             </require>
         </extension>
         <extension name="EGL_MESA_platform_gbm" supported="egl">
